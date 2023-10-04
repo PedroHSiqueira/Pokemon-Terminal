@@ -1,11 +1,11 @@
-export class Pokemon{
+export default class Pokemon{
   nome:string = "";
   tipo:string = "";
   vida:number = 50;
   nivel:number = 1;
   ataques:string[] = [] 
 
-  Bulbasaur(): void{
+   Bulbasaur(): void{
     this.nome = "Bulbasaur"
     this.tipo = "Planta"
     this.ataques = ["Tackle", "Growl", "Razor Leaf"]

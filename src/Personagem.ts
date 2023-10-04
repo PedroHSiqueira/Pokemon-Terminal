@@ -1,6 +1,6 @@
-import { Pokemon } from "./Pokemon";
+import Pokemon from "./Pokemon";
 
-export class Personagem{
+export default class Personagem{
   private _nome: string = "";
   public pokemon: Pokemon = new Pokemon()
 
