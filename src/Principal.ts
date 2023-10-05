@@ -1,6 +1,7 @@
 import { Batalha } from "./Batalha";
-import {Personagem, Oponente} from "./Personagem";
+import { Personagem, Oponente } from "./Personagem";
 import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
+import { estetica } from "./Utilitario";
 const teclado = require("prompt-sync")();
 
 export const personagem: Personagem = new Personagem();
@@ -11,14 +12,9 @@ let option: number;
 // Inicio do Jogo e escolha do nome
 
 console.clear();
-console.log(` 
-  Bem vindos ao Pokemon!
+estetica.nome();
 
-+----------------------+
-|   Escolha seu Nome   |
-|    _____________     |
-+----------------------+`);
-option = teclado("Escolha seu Nome: ");
+option = teclado(" ☛ Digite o seu Nome: ");
 
 while (option.toString().length < 3) {
   console.log("Nome Inválido");
@@ -30,41 +26,32 @@ personagem.nome = option.toString();
 //----------------------------------------------
 // Escolha do Pokemon Inicial
 
-console.log(`\nPrazer em conhece-lo ${personagem.nome}!, Agora você tera 3 Opções de Pokemons Iniciais`);
-console.log("Deves escolher com qual irá iniciar a sua jornada!");
+estetica.apresentacao();
+estetica.selecao();
 
-console.log(`
-+----------Pokemon!----------+
-| 1.Charmander (Fogo)        |
-|                            |
-| 2.Squirtle (Água)          |
-|                            |
-| 3.Bulbasaur (Planta)       |
-+----------------------------+`)
+option = +teclado("Opção Selecionada: ");
 
-option = +teclado("Numero Selecionado: ");
-
-while (option < 1 || option > 3) {
-  console.log("Opção Inválida, Por favor escolha uma das 3 opções!");
+while (option < 1 || option > 3 || isNaN(option)) {
+  console.log("☛ Erro ...Opção Inválida, Por favor escolha uma das 3 opções!");
   option = +teclado("Escolha seu Inicial: ");
 }
 
 switch (option) {
   case 1:
     personagem.pokemon = new Charmander();
-    oponente.pokemon = new Bulbasaur()
+    oponente.pokemon = new Bulbasaur();
     oponente.nome = "Gary";
     break;
 
   case 2:
     personagem.pokemon = new Squirtle();
-    oponente.pokemon = new Charmander()
+    oponente.pokemon = new Charmander();
     oponente.nome = "Jesse";
     break;
 
   case 3:
     personagem.pokemon = new Bulbasaur();
-    oponente.pokemon = new Squirtle()
+    oponente.pokemon = new Squirtle();
     oponente.nome = "James";
     break;
 }
@@ -74,5 +61,3 @@ switch (option) {
 
 Batalha.Iniciar();
 Batalha.atacar();
-
-
