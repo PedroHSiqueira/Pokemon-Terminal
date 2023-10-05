@@ -21,18 +21,6 @@ export default class Pokemon {
     this.nivel = nivel;
     this.ataques = ataques;
   }
-
-  Charmander(): void {
-    this.nome = "Charmander";
-    this.tipo = "Fogo";
-    this.ataques = ["Growl", "Ember", "Tackle"];
-  }
-
-  Squirtle(): void {
-    this.nome = "Squirtle";
-    this.tipo = "Água";
-    this.ataques = ["Growl", "Bubble", "Tackle"];
-  }
 }
 
 export class Bulbasaur extends Pokemon {

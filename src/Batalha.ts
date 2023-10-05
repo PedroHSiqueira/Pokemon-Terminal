@@ -5,8 +5,8 @@ let ataque: number = 0;
 let danoOponente: number = 0;
 let rodada: number = 1;
 
-export class Luta {
-  public static batalhar() {
+export class Batalha {
+  public static Iniciar() {
     console.clear();
     console.log(`
 +----------Pokemon!----------+
@@ -65,18 +65,6 @@ Seu Bônus de ataque atual é: ${ataque}
   Você atacou o ${oponente.nome} com o ${personagem.pokemon.ataques[1]}!
 »»——————————————　★　——————————————««`);
           oponente.pokemon.vida -= ramdom(3, 9) + ataque;
-          if (oponente.pokemon.vida <= 0) {
-            console.log(`
-»»----------Fim de Batalha!----------««);
-   Vitória! ${oponente.pokemon.nome} Desmaiou!
-»»-----------------------------------««\n`);
-          }
-          if (personagem.pokemon.vida <= 0) {
-            console.log(`
-»»----------Fim de Batalha!----------««
-   Derrota! ${personagem.nome} Foi Derrotado!
-»»-----------------------------------««\n`);
-          }
           break;
         case 3:
           console.clear();
@@ -96,7 +84,7 @@ Seu Bônus de ataque atual é: ${ataque}
 »»-----------------------------------------------««
  ${oponente.nome} Usou o ${ataqueOponente}     Vida do oponente: ${oponente.pokemon.vida}
 »»-----------------------------------------------««`);
-        option = +teclado("Voltar para o seu turno, clique enter ...");
+        option = +teclado("Voltar para o seu turno, clique enter ... ");
       }
 
       if (ataqueOponente == oponente.pokemon.ataques[0]) {
@@ -121,12 +109,12 @@ Seu Bônus de ataque atual é: ${ataque}
     if (oponente.pokemon.vida <= 0) {
       console.log(`
 »»----------Fim de Batalha!----------««
-Vitória! ${oponente.nome} Foi Derrotado!
+  Vitória! ${oponente.nome} Foi Derrotado!
 »»-----------------------------------««\n`);
     } else if (personagem.pokemon.vida <= 0) {
       console.log(`
 »»----------Fim de Batalha!----------««
-Derrota! ${personagem.nome} Foi Derrotado!
+  Derrota! ${personagem.nome} Foi Derrotado!
 »»-----------------------------------««\n`);
     }
   }

@@ -1,4 +1,4 @@
-import { Luta } from "./Batalha";
+import { Batalha } from "./Batalha";
 import {Personagem, Oponente} from "./Personagem";
 import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
 const teclado = require("prompt-sync")();
@@ -72,7 +72,7 @@ switch (option) {
 //----------------------------------------------
 // Inicio da Batalha
 
-Luta.batalhar();
-Luta.atacar();
+Batalha.Iniciar();
+Batalha.atacar();
 
 
