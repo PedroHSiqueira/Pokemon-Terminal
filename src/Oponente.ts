@@ -1,7 +1,7 @@
 import Pokemon from "./Pokemon";
 
-export default class Personagem{
-  private _nome: string = "";
+export default class Oponente{
+  private _nome:string = "Indefinido";
   public pokemon: Pokemon = new Pokemon()
 
   get nome(){
