@@ -9,6 +9,7 @@ function random(minimo: number, maximo: number): number {
 
 export class estetica {
   public static nome() {
+    console.clear()
     console.log(` 
                            Bem vindos ao Pokemon!
              
@@ -20,6 +21,7 @@ export class estetica {
   }
 
   public static apresentacao() {
+    console.clear()
     console.log(`\n✷ 　 　　 　 ·         　 ⋆ · 　 *         ✷ 　 　　 　 ·
 　 　　 *　　 * ⋆ 　 .      Bem vindo ao Centro Pokémon      　 　　 *　　 * ⋆ 　 . 
 · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦                     　 ⋆ · 　 *         · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦
@@ -53,6 +55,7 @@ export class estetica {
   }
 
   public static confirmacao() {
+    console.clear()
     console.log(`
        ______________________________
        |                            |.
@@ -73,33 +76,64 @@ export class estetica {
 
   public static batalha() {
     console.log(`                           
-»»----------　Batalha!　--------««
+    .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Batalha -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
 
-         ${personagem.nome} Vs ${oponente.nome}  
-        
-   (${personagem.pokemon.nome}) Vs (${oponente.pokemon.nome})  
-        
-»»------------------------------««\n`);
+                                ${personagem.nome} Vs ${oponente.nome}  
+
+                          (${personagem.pokemon.nome}) Vs (${oponente.pokemon.nome})  
+
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'`);
   }
 
   public static ataques() {
+    estetica.batalha()
     console.log(`
-»»------------------　Rodada ${rodada}　------------------««
-    Escolha seu Movimento:    
-
-    1. ${personagem.pokemon.ataques[0]}   2. ${personagem.pokemon.ataques[1]}        Vida atual: ${personagem.pokemon.vida}
-
-    3. ${personagem.pokemon.ataques[2]}
-»»-----------------------------------------------««\n`);
+    .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
+    |                                                                       |
+    |          Pokémon do Oponente:                                         |
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50                                            
+    |                                                                       |
+    |-----------------------------------------------------------------------|
+    !                                                                       !
+    :                                                                       :
+    :                                                                       :
+    .                                                                       .
+    .                                                                       .
+    :-----------------------------------------------------------------------:
+    !                                                                       !
+    :       Escolha seu Movimento:                                          :
+    |                                                                       |
+            1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:               
+    |                                                                       |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |                                                                       |
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
   }
 
   public static fortalecimento() {
+    console.clear()
+    estetica.batalha()
     console.log(`
-»»————————————　★　————————————««");
-Seu ataque foi Fortalicido!
-
-Seu Bônus de ataque atual é: ${ataque}
-»»————————————　★　————————————««\n`);
+    .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
+    |                                                                       |
+    |          Pokémon do Oponente:                                         |
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+    |                                                                       |
+    !-----------------------------------------------------------------------!
+    :                                                                       :
+    |                      Seu ataque foi Fortalicido!                      |
+    :                                                                       :
+                          Seu Bônus de ataque atual é: ${ataque}                    
+    :                                                                       :
+    :-----------------------------------------------------------------------:
+    !                                                                       !
+    :       Escolha seu Movimento:                                          :
+    |                                                                       |
+            1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:               
+    |                                                                       |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |                                                                       |
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
   }
 
   public static vitoria() {
@@ -117,26 +151,85 @@ Infelizmente ${personagem.nome} você perdeu a batalha!
   }
 
   public static ataqueUm() {
+    console.clear()
+    estetica.batalha()
     console.log(`
-»»——————————————　★　——————————————««
-  Você atacou o ${oponente.nome} com o ${personagem.pokemon.ataques[1]}!
-»»——————————————　★　——————————————««`);
+    .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
+    |                                                                       |
+    |          Pokémon do Oponente:                                         |
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+    |                                                                       |
+    !-----------------------------------------------------------------------!
+    :                                                                       :
+                            ${personagem.pokemon.nome} atacou o ${oponente.pokemon.nome}                          
+    :                                                                       :
+                                    com o ${personagem.pokemon.ataques[1]}!                                
+    :                                                                       :
+    :-----------------------------------------------------------------------:
+    !                                                                       !
+    :       Escolha seu Movimento:                                          :
+    |                                                                       |
+            1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:               
+    |                                                                       |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |                                                                       |
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
   }
 
   public static ataqueDois() {
+    console.clear()
+    estetica.batalha()
     console.log(`
-»»——————————————　★　——————————————««
-Você atacou o ${oponente.nome} com o ${personagem.pokemon.ataques[2]}!
-»»——————————————　★　——————————————««`);
+    .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
+    |                                                                       |
+    |          Pokémon do Oponente:                                         |
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+    |                                                                       |
+    !-----------------------------------------------------------------------!
+    :                                                                       :
+                            ${personagem.pokemon.nome} atacou o ${oponente.pokemon.nome}                          
+    :                                                                       :
+                                com o Tackle!                                
+    :                                                                       :
+    :-----------------------------------------------------------------------:
+    !                                                                       !
+    :       Escolha seu Movimento:                                          :
+    |                                                                       |
+            1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:                 
+    |                                                                       |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |                                                                       |
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
   }
 
   public static dano() {
+
+    console.clear()
+    estetica.batalha()
+
     let ataqueOponente = oponente.pokemon.ataques[random(0, 2)];
 
     console.log(`
-»»-----------------------------------------------««
- ${oponente.nome} Usou o ${ataqueOponente}     Vida do oponente: ${oponente.pokemon.vida}
-»»-----------------------------------------------««`);
+    .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
+    |                                                                       |
+    |          Pokémon do Oponente:                                         |
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+    |                                                                       |
+    !-----------------------------------------------------------------------!
+    :                                                                       :
+    :                                                                       :
+                             ${oponente.pokemon.nome} Usou o ${ataqueOponente}                          
+                                                                
+    :                                                                       :
+    :-----------------------------------------------------------------------:
+    !                                                                       !
+    :       Escolha seu Movimento:                                          :
+    |                                                                       |
+            1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:              
+    |                                                                       |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |                                                                       |
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
 
     if (ataqueOponente == oponente.pokemon.ataques[0]) {
       danoOponente += random(3, 9);

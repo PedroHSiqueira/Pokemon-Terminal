@@ -11,7 +11,6 @@ let option: number;
 //----------------------------------------------
 // Inicio do Jogo e escolha do nome
 
-console.clear();
 estetica.nome();
 
 option = teclado(" ☛ Digite o seu Nome: ");
@@ -20,7 +19,6 @@ while (option.toString().length < 3) {
   console.log("Nome Inválido");
   option = teclado("Escolha seu Nome: ");
 }
-console.clear();
 personagem.nome = option.toString();
 
 //----------------------------------------------

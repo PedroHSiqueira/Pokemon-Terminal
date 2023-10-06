@@ -1,10 +1,10 @@
 export default class Pokemon {
-  nome: string;
-  tipo: string;
-  vida: number;
-  energia: number;
-  nivel: number;
-  ataques: string[];
+  private _nome: string;
+  private _tipo: string;
+  private _vida: number;
+  private _energia: number;
+  private _nivel: number;
+  private _ataques: string[];
 
   constructor(
     nome: string,
@@ -14,12 +14,30 @@ export default class Pokemon {
     nivel: number,
     ataques: string[]
   ) {
-    this.nome = nome;
-    this.tipo = tipo;
-    this.vida = vida;
-    this.energia = energia;
-    this.nivel = nivel;
-    this.ataques = ataques;
+    this._nome = nome;
+    this._tipo = tipo;
+    this._vida = vida;
+    this._energia = energia;
+    this._nivel = nivel;
+    this._ataques = ataques;
+  }
+
+  //Getter
+  public get nome(){
+    return this._nome
+  }
+
+  public get vida(){
+    return this._vida
+  }
+
+  public get ataques(){
+    return this._ataques
+  }
+
+  //Setter
+  public set vida(vida: number){
+    this._vida = vida
   }
 }
 
