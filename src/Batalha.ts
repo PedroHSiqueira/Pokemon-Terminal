@@ -18,13 +18,12 @@ export class Batalha {
     option = +teclado("Aperte Enter para continuar ... ");
 
     console.clear();
-    estetica.batalha();
   }
 
   public static atacar() {
     while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
       estetica.ataques();
-      option = +teclado("Movimento Escolhido: ");
+      option = +teclado("Movimento Escolhido ☛ ");
 
       switch (option) {
         case 1:
@@ -51,8 +50,10 @@ export class Batalha {
 
       if (oponente.pokemon.vida > 0) {
         option = +teclado("Passar o turno para o oponente, clique enter ... ");
+        console.clear()
         estetica.dano();
         option = +teclado("Voltar para o seu turno, clique enter ... ");
+        console.clear()
       }
 
       rodada += 1;

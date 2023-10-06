@@ -11,16 +11,16 @@ let option: number;
 //----------------------------------------------
 // Inicio do Jogo e escolha do nome
 
-console.clear();
 estetica.nome();
-
-option = teclado(" ☛ Digite o seu Nome: ");
+option = teclado(" ☛ Digite ele aqui: ");
 
 while (option.toString().length < 3) {
-  console.log("Nome Inválido");
+  console.log(`
+  »»———————————————————————————————————　★　———————————————————————————————————««
+  ☛ Erro ...Nome Inválido, Por favor escolha um nome com mais de 3 caracteres!
+  »»———————————————————————————————————————————————————————————————————————————««\n`);
   option = teclado("Escolha seu Nome: ");
 }
-console.clear();
 personagem.nome = option.toString();
 
 //----------------------------------------------
@@ -32,7 +32,10 @@ estetica.selecao();
 option = +teclado("Opção Selecionada: ");
 
 while (option < 1 || option > 3 || isNaN(option)) {
-  console.log("☛ Erro ...Opção Inválida, Por favor escolha uma das 3 opções!");
+  console.log(`
+  »»———————————————————————————————————　★　———————————————————————————————————««
+  ☛ Erro ... Opção Inválida, Por favor escolha uma opção entre 1 e 3!
+  »»———————————————————————————————————————————————————————————————————————————««\n`);
   option = +teclado("Escolha seu Inicial: ");
 }
 
