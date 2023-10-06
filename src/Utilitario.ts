@@ -11,13 +11,14 @@ export class estetica {
   public static nome() {
     console.clear()
     console.log(` 
-                           Bem vindos ao Pokemon!
-             
-                         »»——————————　★　——————————««
-                         |     Escolha seu Nome      |
-                         |       _____________       |
-                         »»——————————　★　——————————««
-                                                      `);
+                         Bem vindos ao Pokemon Terminal!
+                           
+»»———————————————————————————————————　★　———————————————————————————————————««
+                           
+                                 Escolha seu Nome      
+                                   _____________       
+                           
+»»———————————————————————————————————————————————————————————————————————————««\n`);
   }
 
   public static apresentacao() {
@@ -136,20 +137,6 @@ export class estetica {
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
   }
 
-  public static vitoria() {
-    console.log(`
-»»-----------------------------------------------««
-Parabéns ${personagem.nome} você venceu a batalha!
-»»-----------------------------------------------««\n`);
-  }
-
-  public static derrota() {
-    console.log(`
-»»-----------------------------------------------««
-Infelizmente ${personagem.nome} você perdeu a batalha!
-»»-----------------------------------------------««\n`);
-  }
-
   public static ataqueUm() {
     console.clear()
     estetica.batalha()
@@ -242,5 +229,19 @@ Infelizmente ${personagem.nome} você perdeu a batalha!
     if (ataqueOponente == oponente.pokemon.ataques[2]) {
       personagem.pokemon.vida -= random(2, 7);
     }
+  }
+
+  public static vitoria() {
+    console.log(`
+»»-----------------------------------------------««
+Parabéns ${personagem.nome} você venceu a batalha!
+»»-----------------------------------------------««\n`);
+  }
+
+  public static derrota() {
+    console.log(`
+»»-----------------------------------------------««
+Infelizmente ${personagem.nome} você perdeu a batalha!
+»»-----------------------------------------------««\n`);
   }
 }
