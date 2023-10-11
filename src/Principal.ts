@@ -1,7 +1,7 @@
 import { Batalha } from "./Batalha";
 import { Personagem, Oponente } from "./Personagem";
 import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
-import { estetica } from "./Utilitario";
+import { Error, estetica } from "./Utilitario";
 const teclado = require("prompt-sync")();
 
 export const personagem: Personagem = new Personagem();
@@ -11,32 +11,26 @@ let option: number;
 //----------------------------------------------
 // Inicio do Jogo e escolha do nome
 
-estetica.nome();
+console.log(estetica.nome())
 option = teclado(" ☛ Digite ele aqui: ");
 
 while (option.toString().length < 3) {
-  console.log(`
-  »»———————————————————————————————————　★　———————————————————————————————————««
-  ☛ Erro ...Nome Inválido, Por favor escolha um nome com mais de 3 caracteres!
-  »»———————————————————————————————————————————————————————————————————————————««\n`);
-  option = teclado("Escolha seu Nome: ");
+  console.log(Error.verificarNome())
+  option = teclado("☛ Digite ele aqui: ");
 }
 personagem.nome = option.toString();
 
 //----------------------------------------------
 // Escolha do Pokemon Inicial
 
-estetica.apresentacao();
-estetica.selecao();
+console.log(estetica.apresentacao());
+console.log(estetica.selecao());
 
 option = +teclado("Opção Selecionada: ");
 
 while (option < 1 || option > 3 || isNaN(option)) {
-  console.log(`
-  »»———————————————————————————————————　★　———————————————————————————————————««
-  ☛ Erro ... Opção Inválida, Por favor escolha uma opção entre 1 e 3!
-  »»———————————————————————————————————————————————————————————————————————————««\n`);
-  option = +teclado("Escolha seu Inicial: ");
+  console.log(Error.VerificaSelecao());
+  option = +teclado("☛ Escolha seu Inicial: ");
 }
 
 switch (option) {
@@ -62,5 +56,5 @@ switch (option) {
 //----------------------------------------------
 // Inicio da Batalha
 
-Batalha.Iniciar();
-Batalha.atacar();
+console.log(Batalha.Iniciar());
+console.log(Batalha.atacar());

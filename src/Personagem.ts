@@ -13,8 +13,9 @@ export class Personagem {
 }
 
 export class Oponente extends Personagem {
-  protected _nome: string = "";
-  public pokemon: Pokemon = new Pokemon("", "", 0, 0, 0, []);
+  constructor() {
+    super()
+  }
 
   public get nome() {
     return this._nome;

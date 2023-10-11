@@ -23,20 +23,20 @@ export default class Pokemon {
   }
 
   //Getter
-  public get nome(){
+  public get nome(): string {
     return this._nome
   }
 
-  public get vida(){
+  public get vida(): number {
     return this._vida
   }
 
-  public get ataques(){
+  public get ataques(): string[] {
     return this._ataques
   }
 
   //Setter
-  public set vida(vida: number){
+  public set vida(vida: number) {
     this._vida = vida
   }
 }
