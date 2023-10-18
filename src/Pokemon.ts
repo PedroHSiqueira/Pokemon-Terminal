@@ -43,7 +43,7 @@ export default class Pokemon {
 
 export class Bulbasaur extends Pokemon {
   constructor() {
-    super("Bulbasaur", "Planta", 1, 100, 1, ["Growl", "Vine Whip", "Tackle"]);
+    super("Bulbasaur", "Planta", 5, 100, 1, ["Growl", "Vine Whip", "Tackle"]);
   }
 }
 

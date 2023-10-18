@@ -35,7 +35,7 @@ console.log(Batalha.atacar());
 
 option = +teclado("Passar o turno para o oponente, clique enter ... ");
 
-while(personagem.pokemon.vida){
+while(personagem.pokemon.vida > 0){
   console.clear();
   console.log(estetica.menuOpcoes());
 
@@ -58,7 +58,9 @@ switch (option) {
     break;
 
   case 3:
+    personagem.pokemon.vida = 0;
     console.clear();
+    console.log(estetica.finalizacao());
     break;
 }
 }

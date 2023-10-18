@@ -61,8 +61,4 @@ export class Batalha {
       console.log(estetica.derrota());
     }
   }
-
-  public static reinicio() {
-    
-  }
 }
