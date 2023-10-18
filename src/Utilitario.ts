@@ -1,10 +1,12 @@
 import { ataque, rodada } from "./Batalha";
+import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
 import { oponente, personagem } from "./Principal";
+
+const teclado = require("prompt-sync")();
 
 let danoOponente: number = 0;
 
 export class Funcionalidades {
-
   public static random(minimo: number, maximo: number): number {
     return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
   }
@@ -12,24 +14,24 @@ export class Funcionalidades {
 
 export class Error {
   public static verificarNome(): string {
-    return (`
+    return `
 »»———————————————————————————————————　★　———————————————————————————————————««\n
 ☛ Erro ...Nome Inválido, Por favor escolha um nome com mais de 3 caracteres!\n
-»»———————————————————————————————————————————————————————————————————————————««\n`);
+»»———————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static VerificaSelecao(): string {
-    return (`
+    return `
 »»———————————————————————————————————　★　———————————————————————————————————««\n
 ☛ Erro ...Nome Inválido, Por favor escolha um nome com mais de 3 caracteres!\n
-»»———————————————————————————————————————————————————————————————————————————««\n`);
+»»———————————————————————————————————————————————————————————————————————————««\n`;
   }
 }
 
 export class estetica {
   public static nome(): string {
-    console.clear()
-    return (` 
+    console.clear();
+    return ` 
                          Bem vindos ao Pokemon Terminal!
                            
 »»———————————————————————————————————　★　———————————————————————————————————««
@@ -37,22 +39,22 @@ export class estetica {
                                  Escolha seu Nome      
                                    _____________       
                            
-»»———————————————————————————————————————————————————————————————————————————««\n`);
+»»———————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static apresentacao(): string {
-    return (`\n✷ 　 　　 　 ·         　 ⋆ · 　 *         ✷ 　 　　 　 ·
+    return `\n✷ 　 　　 　 ·         　 ⋆ · 　 *         ✷ 　 　　 　 ·
 　 　　 *　　 * ⋆ 　 .      Bem vindo ao Centro Pokémon      　 　　 *　　 * ⋆ 　 . 
 · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦                     　 ⋆ · 　 *         · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦
 　 ⋆ · 　 *      * ⋆ 　 .       * ⋆ 　 .             * ⋆ 　 .              　 ⋆ · 　 *
 　 *         ✷ 　 　       Prazer em conhece-lo ${personagem.nome}!,　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✵
 　　　　 ⋆ ✧　 　 · 　Agora você tera 3 Opções de Pokemons Iniciais　 　 　　 *　　 * ⋆ 　 . ✧　 　 · 　 ✧　✵
 　　 *　　 * ⋆ 　 . 　Deves escolher com qual irá iniciar a sua jornada!　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✵
-　　　　 ⋆ ✧　 　 · 　　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✧　 　 · 　 ✧　✵           　 ⋆ · 　 *`);
+　　　　 ⋆ ✧　 　 · 　　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✧　 　 · 　 ✧　✵           　 ⋆ · 　 *`;
   }
 
   public static selecao(): string {
-    return (`                           
+    return `                           
           ====
           !!!!
         ============================
@@ -70,12 +72,12 @@ export class estetica {
       ||      #####   @@*@   #####    ||            __| |____________________________________________| |__
       ||              @@@@            ||           (__   ____________________________________________   __)
     ******************____****************            | |                                            | |
-   *****************************************          | |                                            | |\n`);
+   *****************************************          | |                                            | |\n`;
   }
 
   public static confirmacao(): string {
-    console.clear()
-    return (`
+    console.clear();
+    return `
        ______________________________
        |                            |.
        |         Parabéns!          |.
@@ -90,23 +92,23 @@ export class estetica {
        |           Pronto?          |.
        |   _________________________|___
        |  /                            /.
-       |_/____________________________/.\n`);
+       |_/____________________________/.\n`;
   }
 
   public static batalha(): string {
-    return (`                           
+    return `                           
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Batalha -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
 
                                 ${personagem.nome} Vs ${oponente.nome}  
 
                           (${personagem.pokemon.nome}) Vs (${oponente.pokemon.nome})  
 
-    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'`);
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'`;
   }
 
   public static ataques(): string {
     console.log(estetica.batalha());
-    return (`
+    return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
@@ -126,13 +128,13 @@ export class estetica {
     |                                                                       |
     |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
     |                                                                       |
-    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
 
   public static fortalecimento(): string {
-    console.clear()
+    console.clear();
     console.log(estetica.batalha());
-    return (`
+    return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
@@ -152,13 +154,13 @@ export class estetica {
     |                                                                       |
     |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
     |                                                                       |
-    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
 
   public static ataqueUm(): string {
-    console.clear()
+    console.clear();
     console.log(estetica.batalha());
-    return (`
+    return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
@@ -178,13 +180,13 @@ export class estetica {
     |                                                                       |
     |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
     |                                                                       |
-    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
 
   public static ataqueDois(): string {
-    console.clear()
+    console.clear();
     console.log(estetica.batalha());
-    return (`
+    return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
@@ -204,14 +206,12 @@ export class estetica {
     |                                                                       |
     |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
     |                                                                       |
-    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
 
   public static dano(): string {
-
-    console.clear()
+    console.clear();
     console.log(estetica.batalha());
-
 
     let ataqueOponente = oponente.pokemon.ataques[Funcionalidades.random(0, 2)];
 
@@ -227,7 +227,7 @@ export class estetica {
       personagem.pokemon.vida -= Funcionalidades.random(2, 7);
     }
 
-    return (`
+    return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
@@ -247,20 +247,69 @@ export class estetica {
     |                                                                       |
     |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
     |                                                                       |
-    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`);
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
 
   public static vitoria(): string {
-    return (`
+    return `
     »»———————————————————————————————————　★　———————————————————————————————————««
     ☛ Parabéns ${personagem.nome}, você venceu a batalha!
-    »»———————————————————————————————————————————————————————————————————————————««\n`);
+    »»———————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static derrota(): string {
-    return (`
+    return `
     »»———————————————————————————————————　★　———————————————————————————————————««
     ☛ Infelizmente ${personagem.nome}, você perdeu a batalha!
-    »»———————————————————————————————————————————————————————————————————————————««\n`);
+    »»———————————————————————————————————————————————————————————————————————————««\n`;
+  }
+
+  public static menuOpcoes(): string {
+    return `\n\n
+     ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ 
+     ╬═╬═        
+     ╬═╬═   1 - Reiniciar a Batalha     
+     ╬═╬═        
+     ╬═╬═   2 - Trocar de Pokemon
+     ╬═╬═                 
+     ╬═╬═   3 - Finalizar Jogo              
+     ╬═╬═                 
+     ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ \n`;
+  }
+}
+
+let option: number;
+
+export class Funcoes {
+  public static SelecaoPokemon() {
+    console.log(estetica.apresentacao());
+    console.log(estetica.selecao());
+
+    option = +teclado("Opção Selecionada: ");
+
+    while (option < 1 || option > 3 || isNaN(option)) {
+      console.log(Error.VerificaSelecao());
+      option = +teclado("☛ Escolha seu Inicial: ");
+    }
+
+    switch (option) {
+      case 1:
+        personagem.pokemon = new Charmander();
+        oponente.pokemon = new Bulbasaur();
+        oponente.nome = "Gary";
+        break;
+
+      case 2:
+        personagem.pokemon = new Squirtle();
+        oponente.pokemon = new Charmander();
+        oponente.nome = "Jesse";
+        break;
+
+      case 3:
+        personagem.pokemon = new Bulbasaur();
+        oponente.pokemon = new Squirtle();
+        oponente.nome = "James";
+        break;
+    }
   }
 }
