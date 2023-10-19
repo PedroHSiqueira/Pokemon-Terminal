@@ -1,7 +1,7 @@
 import { Batalha } from "./Batalha";
 import { Personagem, Oponente } from "./Personagem";
 import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
-import { Error, Funcoes, estetica } from "./Utilitario";
+import { Error, Funcionalidades, estetica } from "./Utilitario";
 
 const teclado = require("prompt-sync")();
 export const personagem: Personagem = new Personagem();
@@ -23,7 +23,7 @@ personagem.nome = option.toString();
 //----------------------------------------------
 // Escolha do Pokemon Inicial
 
-console.log(Funcoes.SelecaoPokemon());
+console.log(Funcionalidades.SelecaoPokemon());
 
 //----------------------------------------------
 // Inicio da Batalha
@@ -54,7 +54,7 @@ switch (option) {
 
   case 2:
     console.clear();
-    console.log(Funcoes.SelecaoPokemon());
+    console.log(Funcionalidades.SelecaoPokemon());
     break;
 
   case 3:
