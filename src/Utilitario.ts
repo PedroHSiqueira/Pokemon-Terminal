@@ -4,11 +4,44 @@ import { oponente, personagem } from "./Principal";
 
 const teclado = require("prompt-sync")();
 
+let option: number;
 let danoOponente: number = 0;
 
 export class Funcionalidades {
   public static random(minimo: number, maximo: number): number {
     return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+  }
+
+  public static SelecaoPokemon() {
+    console.log(estetica.apresentacao());
+    console.log(estetica.selecao());
+
+    option = +teclado("Opção Selecionada: ");
+
+    while (option < 1 || option > 3 || isNaN(option)) {
+      console.log(Error.VerificaSelecao());
+      option = +teclado("☛ Escolha seu Inicial: ");
+    }
+
+    switch (option) {
+      case 1:
+        personagem.pokemon = new Charmander();
+        oponente.pokemon = new Bulbasaur();
+        oponente.nome = "Gary";
+        break;
+
+      case 2:
+        personagem.pokemon = new Squirtle();
+        oponente.pokemon = new Charmander();
+        oponente.nome = "Jesse";
+        break;
+
+      case 3:
+        personagem.pokemon = new Bulbasaur();
+        oponente.pokemon = new Squirtle();
+        oponente.nome = "James";
+        break;
+    }
   }
 }
 
@@ -289,38 +322,3 @@ export class estetica {
   }
 }
 
-let option: number;
-
-export class Funcoes {
-  public static SelecaoPokemon() {
-    console.log(estetica.apresentacao());
-    console.log(estetica.selecao());
-
-    option = +teclado("Opção Selecionada: ");
-
-    while (option < 1 || option > 3 || isNaN(option)) {
-      console.log(Error.VerificaSelecao());
-      option = +teclado("☛ Escolha seu Inicial: ");
-    }
-
-    switch (option) {
-      case 1:
-        personagem.pokemon = new Charmander();
-        oponente.pokemon = new Bulbasaur();
-        oponente.nome = "Gary";
-        break;
-
-      case 2:
-        personagem.pokemon = new Squirtle();
-        oponente.pokemon = new Charmander();
-        oponente.nome = "Jesse";
-        break;
-
-      case 3:
-        personagem.pokemon = new Bulbasaur();
-        oponente.pokemon = new Squirtle();
-        oponente.nome = "James";
-        break;
-    }
-  }
-}
