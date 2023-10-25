@@ -8,7 +8,7 @@ export class Personagem {
     return this._nome;
   }
 
-  public get pokemon() : Pokemon {
+  public get pokemon(): Pokemon {
     return this._pokemon;
   }
 
@@ -24,7 +24,7 @@ export class Personagem {
 
 export class Oponente extends Personagem {
   constructor() {
-    super()
+    super();
   }
 
   //Getter
@@ -32,7 +32,7 @@ export class Oponente extends Personagem {
     return this._nome;
   }
 
-  public get pokemon() : Pokemon {
+  public get pokemon(): Pokemon {
     return this._pokemon;
   }
 
