@@ -301,7 +301,7 @@ export class estetica {
     return `\n\n
      ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ 
      ╬═╬═        
-     ╬═╬═   1 - Reiniciar a Batalha     
+     ╬═╬═   1 - Iniciar outra batalha   
      ╬═╬═        
      ╬═╬═   2 - Trocar de Pokemon
      ╬═╬═                 
