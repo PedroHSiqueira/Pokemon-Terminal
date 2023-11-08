@@ -35,9 +35,17 @@ export default class Pokemon {
     return this._ataques
   }
 
+  public get nivel(): number{
+    return this._nivel
+  }
+
   //Setter
   public set vida(vida: number) {
     this._vida = vida
+  }
+
+  public set nivel(nivel: number){
+    this._nivel = nivel
   }
 }
 

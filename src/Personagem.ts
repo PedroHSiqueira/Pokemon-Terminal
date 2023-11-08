@@ -1,4 +1,5 @@
 import Pokemon from "./Pokemon";
+
 export class Personagem {
   protected _nome: string = "";
   protected _pokemon: Pokemon = new Pokemon("", "", 0, 0, 0, []);

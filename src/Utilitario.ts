@@ -13,8 +13,9 @@ export class Funcionalidades {
   }
 
   public static SelecaoPokemon() {
-    console.log(estetica.apresentacao());
-    console.log(estetica.selecao());
+    console.clear();
+    console.log(Estetica.apresentacao());
+    console.log(Estetica.selecao());
 
     option = +teclado("Opção Selecionada: ");
 
@@ -61,7 +62,7 @@ export class Error {
   }
 }
 
-export class estetica {
+export class Estetica {
   public static nome(): string {
     console.clear();
     return ` 
@@ -81,7 +82,7 @@ export class estetica {
 · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦                     　 ⋆ · 　 *         · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦
 　 ⋆ · 　 *      * ⋆ 　 .       * ⋆ 　 .             * ⋆ 　 .              　 ⋆ · 　 *
 　 *         ✷ 　 　       Prazer em conhece-lo ${personagem.nome}!,　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✵
-　　　　 ⋆ ✧　 　 · 　Agora você tera 3 Opções de Pokemons Iniciais　 　 　　 *　　 * ⋆ 　 . ✧　 　 · 　 ✧　✵
+　　　　 ⋆ ✧　 　 · 　Agora você tera 3 Opções de Pokémons Iniciais　 　 　　 *　　 * ⋆ 　 . ✧　 　 · 　 ✧　✵
 　　 *　　 * ⋆ 　 . 　Deves escolher com qual irá iniciar a sua jornada!　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✵
 　　　　 ⋆ ✧　 　 · 　　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✧　 　 · 　 ✧　✵           　 ⋆ · 　 *`;
   }
@@ -105,7 +106,7 @@ export class estetica {
       ||      #####   @@*@   #####    ||            __| |____________________________________________| |__
       ||              @@@@            ||           (__   ____________________________________________   __)
     ******************____****************            | |                                            | |
-   *****************************************          | |                                            | |\n`;
+   *****************************************          | |                                            | |\n\n`;
   }
 
   public static confirmacao(): string {
@@ -129,6 +130,7 @@ export class estetica {
   }
 
   public static batalha(): string {
+    console.clear();
     return `                           
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Batalha -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
 
@@ -140,7 +142,7 @@ export class estetica {
   }
 
   public static ataques(): string {
-    console.log(estetica.batalha());
+    console.log(Estetica.batalha());
     return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
@@ -166,7 +168,7 @@ export class estetica {
 
   public static fortalecimento(): string {
     console.clear();
-    console.log(estetica.batalha());
+    console.log(Estetica.batalha());
     return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
@@ -192,7 +194,7 @@ export class estetica {
 
   public static ataqueUm(): string {
     console.clear();
-    console.log(estetica.batalha());
+    console.log(Estetica.batalha());
     return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
@@ -218,7 +220,7 @@ export class estetica {
 
   public static ataqueDois(): string {
     console.clear();
-    console.log(estetica.batalha());
+    console.log(Estetica.batalha());
     return `
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
@@ -244,7 +246,7 @@ export class estetica {
 
   public static dano(): string {
     console.clear();
-    console.log(estetica.batalha());
+    console.log(Estetica.batalha());
 
     let ataqueOponente = oponente.pokemon.ataques[Funcionalidades.random(0, 2)];
 
@@ -298,27 +300,43 @@ export class estetica {
   }
 
   public static menuOpcoes(): string {
-    return `\n\n
+    console.clear();
+    return `\n
+
+    Olá novamente!, Escolha uma das 3 opções para dar sequência ao jogo
+
      ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ 
      ╬═╬═        
      ╬═╬═   1 - Iniciar outra batalha   
      ╬═╬═        
      ╬═╬═   2 - Trocar de Pokemon
+     ╬═╬═   
+     ╬═╬═   3 - Informações Do Seu Pokémon
      ╬═╬═                 
-     ╬═╬═   3 - Finalizar Jogo              
+     ╬═╬═   4 - Finalizar Jogo              
      ╬═╬═                 
      ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ \n`;
   }
 
+  public static informacoes(): string {
+    return `
+    »»———————————————————————————————————　★　———————————————————————————————————««
+    ☛    Pokémon : ${personagem.pokemon.nome}
+
+    ☛    Vida atual : ${personagem.pokemon.vida}
+
+    ☛    nivel atual : ${personagem.pokemon.nivel}
+    »»———————————————————————————————————————————————————————————————————————————««\n`;
+  }
+
   public static finalizacao(): string {
-    return (`\n
+    return `\n
     ___  _______  _______  _______    _______  ___   __    _  _______  ___      ___   _______  _______  ______   _______ 
     |   ||       ||       ||       |  |       ||   | |  |  | ||   _   ||   |    |   | |       ||   _   ||      | |       |
     |   ||   _   ||    ___||   _   |  |    ___||   | |   |_| ||  |_|  ||   |    |   | |____   ||  |_|  ||  _    ||   _   |
     |   ||  | |  ||   | __ |  | |  |  |   |___ |   | |       ||       ||   |    |   |  ____|  ||       || | |   ||  | |  |
  ___|   ||  |_|  ||   ||  ||  |_|  |  |    ___||   | |  _    ||       ||   |___ |   | | ______||       || |_|   ||  |_|  |
 |       ||       ||   |_| ||       |  |   |    |   | | | |   ||   _   ||       ||   | | |_____ |   _   ||       ||       |
-|_______||_______||_______||_______|  |___|    |___| |_|  |__||__| |__||_______||___| |_______||__| |__||______| |_______|\n`)
+|_______||_______||_______||_______|  |___|    |___| |_|  |__||__| |__||_______||___| |_______||__| |__||______| |_______|\n`;
   }
 }
-

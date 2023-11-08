@@ -1,5 +1,5 @@
 import { oponente, personagem } from "./Principal";
-import { Funcionalidades, estetica } from "./Utilitario";
+import { Funcionalidades, Estetica } from "./Utilitario";
 const teclado = require("prompt-sync")();
 
 export let rodada: number = 1;
@@ -9,7 +9,7 @@ let option: number;
 export class Batalha {
   public Iniciar() {
     console.clear();
-    console.log(estetica.confirmacao());
+    console.log(Estetica.confirmacao());
   }
 
   public atacar(ataqueEscolhido: number) {
@@ -18,7 +18,7 @@ export class Batalha {
           console.clear();
           if (ataque <= 20) {
             ataque += Funcionalidades.random(2, 5);
-            console.log(estetica.fortalecimento());
+            console.log(Estetica.fortalecimento());
             break;
           } else {
             console.log("Seu ataque já está no máximo!");
@@ -26,12 +26,12 @@ export class Batalha {
           }
         case 2:
           console.clear();
-          console.log(estetica.ataqueUm());
+          console.log(Estetica.ataqueUm());
           oponente.pokemon.vida -= Funcionalidades.random(3, 9) + ataque;
           break;
         case 3:
           console.clear();
-          console.log(estetica.ataqueDois());
+          console.log(Estetica.ataqueDois());
           oponente.pokemon.vida -= Funcionalidades.random(2, 5) + ataque;
           break;
       }
@@ -39,7 +39,7 @@ export class Batalha {
       if (oponente.pokemon.vida > 0) {
         option = +teclado("Passar o turno para o oponente, clique enter ... ");
         console.clear();
-        console.log(estetica.dano());
+        console.log(Estetica.dano());
         option = +teclado("Voltar para o seu turno, clique enter ... ");
         console.clear();
       }

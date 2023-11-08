@@ -1,7 +1,6 @@
 import { Batalha, rodada } from "./Batalha";
 import { Personagem, Oponente } from "./Personagem";
-import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
-import { Error, Funcionalidades, estetica } from "./Utilitario";
+import { Error, Funcionalidades, Estetica } from "./Utilitario";
 
 const teclado = require("prompt-sync")();
 
@@ -14,7 +13,7 @@ let option: number;
 //----------------------------------------------
 // Inicio do Jogo e escolha do nome
 
-console.log(estetica.nome());
+console.log(Estetica.nome());
 option = teclado(" ☛ Digite ele aqui: ");
 
 while (option.toString().length < 3) {
@@ -33,18 +32,19 @@ console.log(Funcionalidades.SelecaoPokemon());
 
 console.log(batalha.Iniciar());
 option = +teclado("Aperte Enter para continuar ... ");
-console.log(typeof option);
 
 while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
-  console.log(estetica.ataques());
+  console.log(Estetica.ataques());
   option = +teclado("Movimento Escolhido ☛ ");
   batalha.atacar(Number(option));
 }
 
 if (oponente.pokemon.vida <= 0) {
-  console.log(estetica.vitoria());
+  console.log(Estetica.vitoria());
+  personagem.pokemon.nivel += 1
+
 } else if (personagem.pokemon.vida <= 0) {
-  console.log(estetica.derrota());
+  console.log(Estetica.derrota());
 }
 
 //------------------------------------------------
@@ -52,10 +52,10 @@ if (oponente.pokemon.vida <= 0) {
 option = +teclado("Passar o turno para o oponente, clique enter ... ");
 
 while (personagem.pokemon.vida > 0) {
-  console.log(estetica.menuOpcoes());
+  console.log(Estetica.menuOpcoes());
 
   option = +teclado("Opção Selecionada: ");
-  while (option < 1 || option > 3 || isNaN(option)) {
+  while (option < 1 || option > 4 || isNaN(option)) {
     console.log(Error.VerificaSelecao());
     option = +teclado("☛ Escolha seu Inicial: ");
   }
@@ -68,16 +68,21 @@ while (personagem.pokemon.vida > 0) {
       option = +teclado("Aperte Enter para continuar ... ");
 
       while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
-        console.log(estetica.ataques());
+        console.log(Estetica.ataques());
         option = +teclado("Movimento Escolhido ☛ ");
         batalha.atacar(option);
       }
 
       if (oponente.pokemon.vida <= 0) {
-        console.log(estetica.vitoria());
+        console.log(Estetica.vitoria());
+        personagem.pokemon.nivel += 1
+
       } else if (personagem.pokemon.vida <= 0) {
-        console.log(estetica.derrota());
+        console.log(Estetica.derrota());
       }
+
+      option = +teclado("Pressione enter para continuar ... ");
+
       break;
 
     case 2:
@@ -86,9 +91,15 @@ while (personagem.pokemon.vida > 0) {
       break;
 
     case 3:
+      console.clear();
+      console.log(Estetica.informacoes());
+      option = +teclado("\nPressione enter para continuar ... ");
+      break;
+
+    case 4:
       personagem.pokemon.vida = 0;
       console.clear();
-      console.log(estetica.finalizacao());
+      console.log(Estetica.finalizacao());
       break;
   }
 }
