@@ -14,7 +14,7 @@ let option: number;
 // Inicio do Jogo e escolha do nome
 
 console.log(Estetica.nome());
-option = teclado(" ☛ Digite ele aqui: ");
+option = teclado(" ☛ Digite ele aqui:  ");
 
 while (option.toString().length < 3) {
   console.log(Error.verificarNome());
