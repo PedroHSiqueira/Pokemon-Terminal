@@ -66,7 +66,7 @@ export class Estetica {
 
   public static regras(): string{
     return ` 
-                        Bem vindos ao Pokemon Terminal!
+                           Bem vindos ao Pokemon Terminal!
       
 »»——————————————————————————————————　Instruções　——————————————————————————————————««
       
@@ -139,7 +139,8 @@ export class Estetica {
        |         Selecionado        |.
        |                            |.
        |                            |.
-       | Uma Batalha será iniciada! |.
+       |   Uma Batalha de Tutorial  |.
+       |       será iniciada!       |.
        |                            |.
        |           Pronto?          |.
        |   _________________________|___

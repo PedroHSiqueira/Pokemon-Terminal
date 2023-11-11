@@ -52,15 +52,15 @@ if (oponente.pokemon.vida <= 0) {
 
 //------------------------------------------------
 
-option = +teclado("Passar o turno para o oponente, clique enter ... ");
+option = +teclado("Aperte Enter para continuar ... ");
 
 while (personagem.pokemon.vida > 0) {
   console.log(Estetica.menuOpcoes());
 
   option = +teclado("Opção Selecionada: ");
-  while (option < 1 || option > 4 || isNaN(option)) {
+  while (option < 1 || option > 5 || isNaN(option)) {
     console.log(Error.VerificaSelecao());
-    option = +teclado("☛ Escolha seu Inicial: ");
+    option = +teclado("☛ Escolha uma opção: ");
   }
 
   switch (option) {
