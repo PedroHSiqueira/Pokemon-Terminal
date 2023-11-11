@@ -13,6 +13,9 @@ let option: number;
 //----------------------------------------------
 // Inicio do Jogo e escolha do nome
 
+console.log(Estetica.regras());
+option = teclado("Aperte enter para começar o jogo ...");
+
 console.log(Estetica.nome());
 option = teclado(" ☛ Digite ele aqui:  ");
 
@@ -97,6 +100,12 @@ while (personagem.pokemon.vida > 0) {
       break;
 
     case 4:
+      console.clear();
+      console.log(Estetica.informacoes());
+      option = +teclado("\nPressione enter para continuar ... ");
+      break;
+
+    case 5:
       personagem.pokemon.vida = 0;
       console.clear();
       console.log(Estetica.finalizacao());

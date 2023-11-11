@@ -63,26 +63,44 @@ export class Error {
 }
 
 export class Estetica {
+
+  public static regras(): string{
+    return ` 
+                        Bem vindos ao Pokemon Terminal!
+      
+»»——————————————————————————————————　Instruções　——————————————————————————————————««
+      
+  1. Seu nome deve Possuir no minimo 3 caracteres
+
+  2. Terão 3 opções de pokemons para a escolha, podendo escolher apenas um
+
+  3. O jogo se Baseia em Turnos, sempre que seu turno acabar o do oponente ira começar
+
+  4. Após um vitoria em batalha, seu pokémon ira evoluir 1 nivel
+      
+»»————————————————————————————————————————————————————————————————————————————————««\n`
+  }
+
   public static nome(): string {
     console.clear();
     return ` 
-                         Bem vindos ao Pokemon Terminal!
+                   Hora de Definir qual vai ser o seu nome!
                            
-»»———————————————————————————————————　★　———————————————————————————————————««
+»»——————————————————————————————————————　★　——————————————————————————————————————««
                            
-                                 Escolha seu Nome      
-                                   _____________       
+                              Escolha seu Nome      
+                                _____________       
                            
-»»———————————————————————————————————————————————————————————————————————————««\n`;
+»»————————————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static apresentacao(): string {
     return `\n✷ 　 　　 　 ·         　 ⋆ · 　 *         ✷ 　 　　 　 ·
-　 　　 *　　 * ⋆ 　 .      Bem vindo ao Centro Pokémon      　 　　 *　　 * ⋆ 　 . 
+　 　　 *　　 * ⋆ 　 .         Bem vindo ao Centro Pokémon      　 　　 *　　 * ⋆ 　 . 
 · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦                     　 ⋆ · 　 *         · 　　 ⋆ 　　　 ˚ ˚ 　　 ✦
 　 ⋆ · 　 *      * ⋆ 　 .       * ⋆ 　 .             * ⋆ 　 .              　 ⋆ · 　 *
-　 *         ✷ 　 　       Prazer em conhece-lo ${personagem.nome}!,　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✵
-　　　　 ⋆ ✧　 　 · 　Agora você tera 3 Opções de Pokémons Iniciais　 　 　　 *　　 * ⋆ 　 . ✧　 　 · 　 ✧　✵
+　 *         ✷ 　 　         Prazer em conhece-lo ${personagem.nome}!,　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✵
+　　　　 ⋆ ✧　 　 · 　 Agora você tera 3 Opções de Pokémons Iniciais　 　 　　 *　　 * ⋆ 　 . ✧　 　 · 　 ✧　✵
 　　 *　　 * ⋆ 　 . 　Deves escolher com qual irá iniciar a sua jornada!　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✵
 　　　　 ⋆ ✧　 　 · 　　 · ✵              　　　　 ⋆ ✧　 　 · 　 ✧　✧　 　 · 　 ✧　✵           　 ⋆ · 　 *`;
   }
@@ -286,22 +304,28 @@ export class Estetica {
   }
 
   public static vitoria(): string {
+    console.clear()
     return `
     »»———————————————————————————————————　★　———————————————————————————————————««
-    ☛ Parabéns ${personagem.nome}, você venceu a batalha!
+
+    ☛  Parabéns ${personagem.nome}, você venceu a batalha!
+    
+    ☛  Seu pokémon Evoluiu para o nivel ${personagem.pokemon.nivel + 1 }
+
     »»———————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static derrota(): string {
+    console.clear()
     return `
     »»———————————————————————————————————　★　———————————————————————————————————««
-    ☛ Infelizmente ${personagem.nome}, você perdeu a batalha!
+    ☛  Infelizmente ${personagem.nome}, você perdeu a batalha!
     »»———————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static menuOpcoes(): string {
     console.clear();
-    return `\n
+    return `
 
     Olá novamente!, Escolha uma das 3 opções para dar sequência ao jogo
 
@@ -313,7 +337,9 @@ export class Estetica {
      ╬═╬═   
      ╬═╬═   3 - Informações Do Seu Pokémon
      ╬═╬═                 
-     ╬═╬═   4 - Finalizar Jogo              
+     ╬═╬═   4 - Ir ao centro Pokémon
+     ╬═╬═                 
+     ╬═╬═   5 - Finalizar Jogo              
      ╬═╬═                 
      ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ \n`;
   }
