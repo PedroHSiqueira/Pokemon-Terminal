@@ -328,7 +328,7 @@ export class Estetica {
     console.clear();
     return `
 
-    Olá novamente!, Escolha uma das 3 opções para dar sequência ao jogo
+    Olá novamente!, Escolha uma das 4 opções para dar sequência ao jogo
 
      ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ 
      ╬═╬═        
@@ -338,19 +338,21 @@ export class Estetica {
      ╬═╬═   
      ╬═╬═   3 - Informações Do Seu Pokémon
      ╬═╬═                 
-     ╬═╬═   4 - Ir ao centro Pokémon
-     ╬═╬═                 
-     ╬═╬═   5 - Finalizar Jogo              
+     ╬═╬═   4 - Finalizar Jogo              
      ╬═╬═                 
      ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ ╬═╬═ \n`;
   }
 
   public static informacoes(): string {
     return `
+    Estatisticas Do Seu Pokémon:
+
     »»———————————————————————————————————　★　———————————————————————————————————««
     ☛    Pokémon : ${personagem.pokemon.nome}
 
     ☛    Vida atual : ${personagem.pokemon.vida}
+
+    ☛    Tipo do Pokémon : ${personagem.pokemon.tipo}
 
     ☛    nivel atual : ${personagem.pokemon.nivel}
     »»———————————————————————————————————————————————————————————————————————————««\n`;

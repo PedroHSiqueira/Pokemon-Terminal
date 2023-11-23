@@ -27,6 +27,10 @@ export default class Pokemon {
     return this._nome
   }
 
+  public get tipo(): string{
+    return this._tipo
+  }
+
   public get vida(): number {
     return this._vida
   }
@@ -51,7 +55,7 @@ export default class Pokemon {
 
 export class Bulbasaur extends Pokemon {
   constructor() {
-    super("Bulbasaur", "Planta", 5, 100, 1, ["Growl", "Vine Whip", "Tackle"]);
+    super("Bulbasaur", "Planta", 50, 100, 1, ["Growl", "Vine Whip", "Tackle"]);
   }
 }
 

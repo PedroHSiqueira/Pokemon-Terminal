@@ -58,14 +58,14 @@ while (personagem.pokemon.vida > 0) {
   console.log(Estetica.menuOpcoes());
 
   option = +teclado("Opção Selecionada: ");
-  while (option < 1 || option > 5 || isNaN(option)) {
+  while (option < 1 || option > 4 || isNaN(option)) {
     console.log(Error.VerificaSelecao());
     option = +teclado("☛ Escolha uma opção: ");
   }
 
   switch (option) {
     case 1:
-      oponente.pokemon.vida = 1;
+      oponente.pokemon.vida = 50;
 
       console.log(batalha.Iniciar());
       option = +teclado("Aperte Enter para continuar ... ");
@@ -82,6 +82,8 @@ while (personagem.pokemon.vida > 0) {
 
       } else if (personagem.pokemon.vida <= 0) {
         console.log(Estetica.derrota());
+        console.log(Estetica.finalizacao());
+        
       }
 
       option = +teclado("Pressione enter para continuar ... ");
@@ -100,12 +102,6 @@ while (personagem.pokemon.vida > 0) {
       break;
 
     case 4:
-      console.clear();
-      console.log(Estetica.informacoes());
-      option = +teclado("\nPressione enter para continuar ... ");
-      break;
-
-    case 5:
       personagem.pokemon.vida = 0;
       console.clear();
       console.log(Estetica.finalizacao());
