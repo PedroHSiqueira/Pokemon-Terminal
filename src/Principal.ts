@@ -25,6 +25,9 @@ while (option.toString().length < 3) {
 }
 personagem.nome = option.toString();
 
+console.log(personagem.apresentarse());
+option = +teclado("Aperte Enter para continuar ... ");
+
 //----------------------------------------------
 // Escolha do Pokemon Inicial
 
@@ -34,6 +37,7 @@ console.log(Funcionalidades.SelecaoPokemon());
 //Batalha
 
 console.log(batalha.Iniciar());
+console.log(oponente.apresentarse());
 option = +teclado("Aperte Enter para continuar ... ");
 
 while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
