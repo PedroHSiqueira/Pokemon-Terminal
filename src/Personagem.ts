@@ -8,7 +8,7 @@ interface PersonagemGestos {
 
 export abstract class Personagem {
   protected _nome: string = "";
-  protected _pokemon: Pokemon = new Pokemon("", "", 0, 0, 0, []);
+  protected _pokemon: Pokemon = new Pokemon("", "", 0, 0, []);
 
   abstract descricao(): string;
 }
@@ -27,11 +27,13 @@ export class Jogador extends Personagem implements PersonagemGestos {
     return `
   Descrição Do seu Personagem:
 
-»»———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««
+»»——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««
       
-   ${this._nome} traz consigo uma aura de curiosidade e determinação. Com uma abordagem equilibrada entre estratégia e empatia, ${this._nome} se aproxima de seus Pokémon
-   procurando compreender suas personalidades. seu primeiro Pokémon foi enviado pelo seu pai como Presente\n
-»»———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««
+   ${this._nome} traz consigo uma aura de curiosidade e determinação. Com uma abordagem equilibrada entre estratégia e empatia
+   ${this._nome} se aproxima de seus Pokémon procurando compreender suas personalidades.
+   seu primeiro Pokémon foi enviado pelo seu pai como Presente
+
+»»——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««
   `;
   }
 
@@ -63,13 +65,13 @@ export class Oponente extends Personagem implements PersonagemGestos {
     return `
   Descrição Do seu Oponente:
       
-»»———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««
+»»——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««
 
     Nome: ${this._nome}
 
     ${this._nome} é um treinador de Pokémon que busca se tornar o melhor treinador do mundo. Ele é um treinador de Pokémon do tipo ${this._pokemon.tipo}
-    seu primeiro Pokémon foi enviado pelo seu pai como Presente\n
-»»———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««`;
+    seu primeiro Pokémon foi enviado pela sua escola para ela participar de um torneio\n
+»»——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————««`;
   }
 
   //Getter

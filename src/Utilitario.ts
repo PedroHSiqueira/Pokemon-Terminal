@@ -1,5 +1,5 @@
-import { ataque, rodada } from "./Batalha";
-import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
+import { rodada } from "./Batalha";
+import { Bulbasaur, Charmander, Squirtle, ataqueFortalecido } from "./Pokemon";
 import { oponente, personagem } from "./Principal";
 
 const teclado = require("prompt-sync")();
@@ -44,16 +44,18 @@ export class Funcionalidades {
         break;
     }
   }
+
+  public static VerificaVida(): void {
+    if (oponente.pokemon.vida <= 0) {
+      console.log(Estetica.vitoria());
+      personagem.pokemon.nivel += 1;
+    } else if (personagem.pokemon.vida <= 0) {
+      console.log(Estetica.derrota());
+    }
+  }
 }
 
 export class Error {
-  public static verificarNome(): string {
-    return `
-»»———————————————————————————————————　★　———————————————————————————————————««\n
-☛ Erro ...Nome Inválido, Por favor escolha um nome com mais de 3 caracteres!\n
-»»———————————————————————————————————————————————————————————————————————————««\n`;
-  }
-
   public static VerificaSelecao(): string {
     return `
 »»———————————————————————————————————　★　———————————————————————————————————««\n
@@ -197,7 +199,7 @@ export class Estetica {
     :                                                                       :
     |                      Seu ataque foi Fortalicido!                      |
     :                                                                       :
-                          Seu Bônus de ataque atual é: ${ataque}                    
+                          Seu Bônus de ataque atual é: ${ataqueFortalecido}!                    
     :                                                                       :
     :-----------------------------------------------------------------------:
     !                                                                       !

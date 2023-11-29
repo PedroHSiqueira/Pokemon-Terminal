@@ -1,9 +1,9 @@
-import { oponente } from "./Principal";
-import { Funcionalidades, Estetica } from "./Utilitario";
+import { Bulbasaur, Charmander, Squirtle } from "./Pokemon";
+import { oponente, personagem } from "./Principal";
+import { Estetica } from "./Utilitario";
 const teclado = require("prompt-sync")();
 
 export let rodada: number = 1;
-export let ataque: number = 0;
 let option: number;
 
 export class Batalha {
@@ -17,24 +17,31 @@ export class Batalha {
   public atacar(ataqueEscolhido: number) {
     switch (ataqueEscolhido) {
       case 1:
-        console.clear();
-        if (ataque <= 20) {
-          ataque += Funcionalidades.random(2, 5);
-          console.log(Estetica.fortalecimento());
-          break;
+        if (personagem.pokemon.nome == "Charmander") {
+          (personagem.pokemon as Charmander).fortalecimento();
+        } else if (oponente.pokemon.nome == "Squirtle") {
+          (oponente.pokemon as Squirtle).fortalecimento();
         } else {
-          console.log("Seu ataque já está no máximo!");
-          break;
+          (oponente.pokemon as Bulbasaur).fortalecimento();
         }
+        break;
       case 2:
-        console.clear();
-        console.log(Estetica.ataqueUm());
-        oponente.pokemon.vida -= Funcionalidades.random(4, 10) + ataque;
+        if (personagem.pokemon.nome == "Charmander") {
+          (personagem.pokemon as Charmander).ataqueum();
+        } else if (oponente.pokemon.nome == "Squirtle") {
+          (oponente.pokemon as Squirtle).ataqueum();
+        } else {
+          (oponente.pokemon as Bulbasaur).ataqueum();
+        }
         break;
       case 3:
-        console.clear();
-        console.log(Estetica.ataqueDois());
-        oponente.pokemon.vida -= Funcionalidades.random(3, 6) + ataque;
+        if (personagem.pokemon.nome == "Charmander") {
+          (personagem.pokemon as Charmander).ataqueDois();
+        } else if (oponente.pokemon.nome == "Squirtle") {
+          (oponente.pokemon as Squirtle).ataqueDois();
+        } else {
+          (oponente.pokemon as Bulbasaur).ataqueDois();
+        }
         break;
     }
 

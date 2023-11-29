@@ -1,7 +1,6 @@
-import { Batalha, rodada } from "./Batalha";
-import { Personagem, Oponente, Jogador } from "./Personagem";
+import { Batalha } from "./Batalha";
+import { Oponente, Jogador } from "./Personagem";
 import { Error, Funcionalidades, Estetica } from "./Utilitario";
-
 const teclado = require("prompt-sync")();
 
 export const personagem: Jogador = new Jogador();
@@ -19,14 +18,10 @@ option = teclado("Aperte enter para começar o jogo ...");
 console.log(Estetica.nome());
 option = teclado(" ☛ Digite ele aqui:  ");
 
-while (option.toString().length < 3) {
-  console.log(Error.verificarNome());
-  option = teclado("☛ Digite ele aqui: ");
-}
 personagem.nome = option.toString();
 
 console.log(personagem.descricao());
-option = +teclado("Aperte Enter para continuar ... ");
+teclado("Aperte Enter para continuar ... ");
 
 //----------------------------------------------
 // Escolha do Pokemon Inicial
@@ -44,21 +39,16 @@ while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
   batalha.atacar(Number(option));
 }
 
-if (oponente.pokemon.vida <= 0) {
-  console.log(Estetica.vitoria());
-  personagem.pokemon.nivel += 1;
-} else if (personagem.pokemon.vida <= 0) {
-  console.log(Estetica.derrota());
-}
+//Tela de Vitoria e Derrota
+Funcionalidades.VerificaVida();
 
 //------------------------------------------------
-
-option = +teclado("Aperte Enter para continuar ... ");
+teclado("Aperte Enter para continuar ... ");
 
 while (personagem.pokemon.vida > 0) {
   console.log(Estetica.menuOpcoes());
-
   option = +teclado("Opção Selecionada: ");
+
   while (option < 1 || option > 4 || isNaN(option)) {
     console.log(Error.VerificaSelecao());
     option = +teclado("☛ Escolha uma opção: ");
@@ -67,7 +57,6 @@ while (personagem.pokemon.vida > 0) {
   switch (option) {
     case 1:
       oponente.pokemon.vida = 50;
-
       console.log(batalha.Iniciar());
 
       while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
@@ -84,8 +73,7 @@ while (personagem.pokemon.vida > 0) {
         console.log(Estetica.finalizacao());
       }
 
-      option = +teclado("Pressione enter para continuar ... ");
-
+      teclado("Pressione enter para continuar ... ");
       break;
 
     case 2:
@@ -96,7 +84,7 @@ while (personagem.pokemon.vida > 0) {
     case 3:
       console.clear();
       console.log(Estetica.informacoes());
-      option = +teclado("\nPressione enter para continuar ... ");
+      teclado("Pressione enter para continuar ... ");
       break;
 
     case 4:
