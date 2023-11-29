@@ -24,32 +24,32 @@ export default class Pokemon {
 
   //Getter
   public get nome(): string {
-    return this._nome
+    return this._nome;
   }
 
-  public get tipo(): string{
-    return this._tipo
+  public get tipo(): string {
+    return this._tipo;
   }
 
   public get vida(): number {
-    return this._vida
+    return this._vida;
   }
 
   public get ataques(): string[] {
-    return this._ataques
+    return this._ataques;
   }
 
-  public get nivel(): number{
-    return this._nivel
+  public get nivel(): number {
+    return this._nivel;
   }
 
   //Setter
   public set vida(vida: number) {
-    this._vida = vida
+    this._vida = vida;
   }
 
-  public set nivel(nivel: number){
-    this._nivel = nivel
+  public set nivel(nivel: number) {
+    this._nivel = nivel;
   }
 }
 

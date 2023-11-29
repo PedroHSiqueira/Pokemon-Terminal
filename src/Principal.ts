@@ -1,10 +1,10 @@
 import { Batalha, rodada } from "./Batalha";
-import { Personagem, Oponente } from "./Personagem";
+import { Personagem, Oponente, Jogador } from "./Personagem";
 import { Error, Funcionalidades, Estetica } from "./Utilitario";
 
 const teclado = require("prompt-sync")();
 
-export const personagem: Personagem = new Personagem();
+export const personagem: Jogador = new Jogador();
 export const oponente: Oponente = new Oponente();
 export const batalha: Batalha = new Batalha();
 
@@ -25,7 +25,7 @@ while (option.toString().length < 3) {
 }
 personagem.nome = option.toString();
 
-console.log(personagem.apresentarse());
+console.log(personagem.descricao());
 option = +teclado("Aperte Enter para continuar ... ");
 
 //----------------------------------------------
@@ -37,8 +37,6 @@ console.log(Funcionalidades.SelecaoPokemon());
 //Batalha
 
 console.log(batalha.Iniciar());
-console.log(oponente.apresentarse());
-option = +teclado("Aperte Enter para continuar ... ");
 
 while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
   console.log(Estetica.ataques());
@@ -48,8 +46,7 @@ while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
 
 if (oponente.pokemon.vida <= 0) {
   console.log(Estetica.vitoria());
-  personagem.pokemon.nivel += 1
-
+  personagem.pokemon.nivel += 1;
 } else if (personagem.pokemon.vida <= 0) {
   console.log(Estetica.derrota());
 }
@@ -72,7 +69,6 @@ while (personagem.pokemon.vida > 0) {
       oponente.pokemon.vida = 50;
 
       console.log(batalha.Iniciar());
-      option = +teclado("Aperte Enter para continuar ... ");
 
       while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {
         console.log(Estetica.ataques());
@@ -82,12 +78,10 @@ while (personagem.pokemon.vida > 0) {
 
       if (oponente.pokemon.vida <= 0) {
         console.log(Estetica.vitoria());
-        personagem.pokemon.nivel += 1
-
+        personagem.pokemon.nivel += 1;
       } else if (personagem.pokemon.vida <= 0) {
         console.log(Estetica.derrota());
         console.log(Estetica.finalizacao());
-        
       }
 
       option = +teclado("Pressione enter para continuar ... ");

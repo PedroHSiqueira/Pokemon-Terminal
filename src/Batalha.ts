@@ -1,4 +1,4 @@
-import { oponente, personagem } from "./Principal";
+import { oponente } from "./Principal";
 import { Funcionalidades, Estetica } from "./Utilitario";
 const teclado = require("prompt-sync")();
 
@@ -7,43 +7,45 @@ export let ataque: number = 0;
 let option: number;
 
 export class Batalha {
-  public Iniciar() {
+  public Iniciar(): void {
     console.clear();
     console.log(Estetica.confirmacao());
+    console.log(oponente.descricao());
+    teclado("Aperte Enter para continuar ... ");
   }
 
   public atacar(ataqueEscolhido: number) {
-      switch (ataqueEscolhido) {
-        case 1:
-          console.clear();
-          if (ataque <= 20) {
-            ataque += Funcionalidades.random(2, 5);
-            console.log(Estetica.fortalecimento());
-            break;
-          } else {
-            console.log("Seu ataque já está no máximo!");
-            break;
-          }
-        case 2:
-          console.clear();
-          console.log(Estetica.ataqueUm());
-          oponente.pokemon.vida -= Funcionalidades.random(3, 9) + ataque;
-          break;
-        case 3:
-          console.clear();
-          console.log(Estetica.ataqueDois());
-          oponente.pokemon.vida -= Funcionalidades.random(2, 5) + ataque;
-          break;
-      }
-
-      if (oponente.pokemon.vida > 0) {
-        option = +teclado("Passar o turno para o oponente, clique enter ... ");
+    switch (ataqueEscolhido) {
+      case 1:
         console.clear();
-        console.log(Estetica.dano());
-        option = +teclado("Voltar para o seu turno, clique enter ... ");
+        if (ataque <= 20) {
+          ataque += Funcionalidades.random(2, 5);
+          console.log(Estetica.fortalecimento());
+          break;
+        } else {
+          console.log("Seu ataque já está no máximo!");
+          break;
+        }
+      case 2:
         console.clear();
-      }
+        console.log(Estetica.ataqueUm());
+        oponente.pokemon.vida -= Funcionalidades.random(4, 10) + ataque;
+        break;
+      case 3:
+        console.clear();
+        console.log(Estetica.ataqueDois());
+        oponente.pokemon.vida -= Funcionalidades.random(3, 6) + ataque;
+        break;
+    }
 
-      rodada += 1;
+    if (oponente.pokemon.vida > 0) {
+      option = +teclado("Passar o turno para o oponente, clique enter ... ");
+      console.clear();
+      console.log(Estetica.dano());
+      option = +teclado("Voltar para o seu turno, clique enter ... ");
+      console.clear();
+    }
+
+    rodada += 1;
   }
 }

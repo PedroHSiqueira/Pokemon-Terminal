@@ -63,8 +63,7 @@ export class Error {
 }
 
 export class Estetica {
-
-  public static regras(): string{
+  public static regras(): string {
     return ` 
                            Bem vindos ao Pokemon Terminal!
       
@@ -78,7 +77,7 @@ export class Estetica {
 
   4. Após um vitoria em batalha, seu pokémon ira evoluir 1 nivel
       
-»»————————————————————————————————————————————————————————————————————————————————««\n`
+»»————————————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static nome(): string {
@@ -274,7 +273,7 @@ export class Estetica {
     }
 
     if (ataqueOponente == oponente.pokemon.ataques[1]) {
-      personagem.pokemon.vida -= Funcionalidades.random(3, 9);
+      personagem.pokemon.vida -= Funcionalidades.random(2, 8);
     }
 
     if (ataqueOponente == oponente.pokemon.ataques[2]) {
@@ -305,19 +304,19 @@ export class Estetica {
   }
 
   public static vitoria(): string {
-    console.clear()
+    console.clear();
     return `
     »»———————————————————————————————————　★　———————————————————————————————————««
 
     ☛  Parabéns ${personagem.nome}, você venceu a batalha!
     
-    ☛  Seu pokémon Evoluiu para o nivel ${personagem.pokemon.nivel + 1 }
+    ☛  Seu pokémon Evoluiu para o nivel ${personagem.pokemon.nivel + 1}
 
     »»———————————————————————————————————————————————————————————————————————————««\n`;
   }
 
   public static derrota(): string {
-    console.clear()
+    console.clear();
     return `
     »»———————————————————————————————————　★　———————————————————————————————————««
     ☛  Infelizmente ${personagem.nome}, você perdeu a batalha!
