@@ -167,7 +167,7 @@ export class Estetica {
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
-                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50                                            
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 35                                            
     |                                                                       |
     |-----------------------------------------------------------------------|
     !                                                                       !
@@ -181,7 +181,7 @@ export class Estetica {
     |                                                                       |
             1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:               
     |                                                                       |
-    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 35                  |
     |                                                                       |
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
@@ -193,7 +193,7 @@ export class Estetica {
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
-                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 35    
     |                                                                       |
     !-----------------------------------------------------------------------!
     :                                                                       :
@@ -207,7 +207,7 @@ export class Estetica {
     |                                                                       |
             1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:               
     |                                                                       |
-    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 35                  |
     |                                                                       |
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
@@ -219,7 +219,7 @@ export class Estetica {
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
-                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 35    
     |                                                                       |
     !-----------------------------------------------------------------------!
     :                                                                       :
@@ -233,7 +233,7 @@ export class Estetica {
     |                                                                       |
             1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:               
     |                                                                       |
-    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 35                  |
     |                                                                       |
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
@@ -245,7 +245,7 @@ export class Estetica {
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
-                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 35    
     |                                                                       |
     !-----------------------------------------------------------------------!
     :                                                                       :
@@ -259,7 +259,7 @@ export class Estetica {
     |                                                                       |
             1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:                 
     |                                                                       |
-    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 35                  |
     |                                                                       |
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }
@@ -286,7 +286,7 @@ export class Estetica {
     .-=-=-=-=-=-=-=-=-=-=-=-=-=-= Rodada ${rodada} -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
     |                                                                       |
     |          Pokémon do Oponente:                                         |
-                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 50    
+                    ${oponente.pokemon.nome}                       Vida: ${oponente.pokemon.vida} / 35    
     |                                                                       |
     !-----------------------------------------------------------------------!
     :                                                                       :
@@ -300,7 +300,7 @@ export class Estetica {
     |                                                                       |
             1. ${personagem.pokemon.ataques[0]}       2. ${personagem.pokemon.ataques[1]}               Vida Atual:              
     |                                                                       |
-    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 50                  |
+    |       3. ${personagem.pokemon.ataques[2]}                              ${personagem.pokemon.vida} / 35                  |
     |                                                                       |
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'\n`;
   }

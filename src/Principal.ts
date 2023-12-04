@@ -56,7 +56,7 @@ while (personagem.pokemon.vida > 0) {
 
   switch (option) {
     case 1:
-      oponente.pokemon.vida = 50;
+      oponente.pokemon.vida = 35;
       console.log(batalha.Iniciar());
 
       while (personagem.pokemon.vida > 0 && oponente.pokemon.vida > 0) {

@@ -63,7 +63,7 @@ export default class Pokemon {
 
 export class Bulbasaur extends Pokemon implements ataque {
   constructor() {
-    super("Bulbasaur", "Planta", 50, 1, ["Growl", "Vine Whip", "Tackle"]);
+    super("Bulbasaur", "Planta", 35, 1, ["Growl", "Vine Whip", "Tackle"]);
   }
 
   fortalecimento(): void {
@@ -92,7 +92,7 @@ export class Bulbasaur extends Pokemon implements ataque {
 
 export class Charmander extends Pokemon implements ataque {
   constructor() {
-    super("Charmander", "Fogo", 50, 1, ["Growl", "Ember", "Tackle"]);
+    super("Charmander", "Fogo", 35, 1, ["Growl", "Ember", "Tackle"]);
   }
 
   fortalecimento(): void {
@@ -121,7 +121,7 @@ export class Charmander extends Pokemon implements ataque {
 
 export class Squirtle extends Pokemon implements ataque {
   constructor() {
-    super("Squirtle", "Água", 50, 1, ["Growl", "Bubble", "Tackle"]);
+    super("Squirtle", "Água", 35, 1, ["Growl", "Bubble", "Tackle"]);
   }
 
   fortalecimento(): void {
