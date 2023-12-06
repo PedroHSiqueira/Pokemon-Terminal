@@ -51,6 +51,7 @@ export class Funcionalidades {
       personagem.pokemon.nivel += 1;
     } else if (personagem.pokemon.vida <= 0) {
       console.log(Estetica.derrota());
+      console.log(Estetica.finalizacao());
     }
   }
 }

@@ -16,9 +16,7 @@ console.log(Estetica.regras());
 option = teclado("Aperte enter para começar o jogo ...");
 
 console.log(Estetica.nome());
-option = teclado(" ☛ Digite ele aqui:  ");
-
-personagem.nome = option.toString();
+personagem.nome = teclado(" ☛ Digite ele aqui:  ");
 
 console.log(personagem.descricao());
 teclado("Aperte Enter para continuar ... ");
@@ -65,13 +63,7 @@ while (personagem.pokemon.vida > 0) {
         batalha.atacar(option);
       }
 
-      if (oponente.pokemon.vida <= 0) {
-        console.log(Estetica.vitoria());
-        personagem.pokemon.nivel += 1;
-      } else if (personagem.pokemon.vida <= 0) {
-        console.log(Estetica.derrota());
-        console.log(Estetica.finalizacao());
-      }
+      Funcionalidades.VerificaVida();
 
       teclado("Pressione enter para continuar ... ");
       break;
